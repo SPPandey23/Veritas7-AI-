@@ -13,16 +13,13 @@ st.set_page_config(page_title="Veritas7 AI", layout="wide", page_icon="🕵️")
 st.title("🕵️ Veritas7 AI")
 st.markdown("A robust 7-stage automated research pipeline powered by LangGraph.")
 
-groq_key = st.text_input(
-    "Groq API Key (Llama 3)",
-    type="password",
-    value=os.environ.get("GROQ_API_KEY", "")
-)
+groq_key = os.environ.get("GROQ_API_KEY")
+tavily_key = os.environ.get("TAVILY_API_KEY")
 
-if groq_key:
-    os.environ["GROQ_API_KEY"] = groq_key
-else:
-    st.warning("Please provide an API key to get real LLM responses.")
+if not groq_key:
+    st.error("Groq API key not found. Please set it in your environment variables.")
+if not tavily_key:
+    st.error("Tavily API key not found. Please set it in your environment variables.")
 
 query = st.text_input("Enter your complex research question:", placeholder="E.g., What are the latest advancements in AI agent architectures?")
 
