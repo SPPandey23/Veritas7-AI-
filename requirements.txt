@@ -1,0 +1,13 @@
+streamlit
+python-dotenv
+langchain-groq
+pydantic
+pydantic-settings
+langgraph
+tavily-python
+beautifulsoup4
+requests
+chromadb
+sentence-transformers
+langchain-chroma
+langchain-huggingface
