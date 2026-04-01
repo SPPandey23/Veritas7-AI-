@@ -1,4 +1,4 @@
-# 🕵️‍♂️ AI Research Agent: Autonomous Multi-Agent Research System
+#  AI Research Agent: Autonomous Multi-Agent Research System
 
 > **An advanced, self-healing RAG pipeline that autonomously plans, researches, synthesizes, and refines complex queries into comprehensive answers.**
 
@@ -69,6 +69,7 @@ model/
 │   ├── query_rewriter.py
 │   ├── research_agent.py
 │   ├── summarizer.py
+│   ├── generator.py
 │   ├── critic_agent.py
 │   └── refiner.py
 ├── config/             # Settings and Env management
@@ -79,7 +80,6 @@ model/
 ├── retrieval/          # Scraping, embedding, and vector storage
 │   ├── web_search.py
 │   └── embeddings.py
-├── .env                # Secret keys
 ├── README.md           # Documentation
 ├── requirements.txt    # Python dependencies
 └── app.py              # Streamlit Entry Point
