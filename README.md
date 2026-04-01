@@ -93,7 +93,7 @@ Follow these steps to deploy the AI Research Agent locally.
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
+git clone <your-repo-url
 cd model
 ```
 
