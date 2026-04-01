@@ -13,15 +13,16 @@ st.set_page_config(page_title="Veritas7 AI", layout="wide", page_icon="🕵️")
 st.title("🕵️ Veritas7 AI")
 st.markdown("A robust 7-stage automated research pipeline powered by LangGraph.")
 
-with st.sidebar:
-    st.header("Configuration")
-    st.markdown("Provide the API Keys below:")
-    groq_key = st.text_input("Groq API Key (Llama 3)", type="password", value=os.environ.get("GROQ_API_KEY", ""))
-    
-    if groq_key:
-        os.environ["GROQ_API_KEY"] = groq_key
-    else:
-        st.warning("Please provide an API key to get real LLM responses.")
+groq_key = st.text_input(
+    "Groq API Key (Llama 3)",
+    type="password",
+    value=os.environ.get("GROQ_API_KEY", "")
+)
+
+if groq_key:
+    os.environ["GROQ_API_KEY"] = groq_key
+else:
+    st.warning("Please provide an API key to get real LLM responses.")
 
 query = st.text_input("Enter your complex research question:", placeholder="E.g., What are the latest advancements in AI agent architectures?")
 
