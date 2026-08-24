@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     TOP_K_RESULTS: int = 5
 
     # --- LLM Settings ---
-    LLM_MODEL: str = "llama-3.3-70b-versatile"
+    LLM_MODEL: str = "openai/gpt-oss-120b"
     MAX_ITERATIONS: int = 3
 
     # --- Path Helpers ---
