@@ -6,7 +6,7 @@ client = None
 if getattr(settings, "GROQ_API_KEY", None):
     client = ChatGroq(
         api_key=settings.GROQ_API_KEY,
-        model=getattr(settings, "LLM_MODEL", "llama3-8b-8192"),
+        model=getattr(settings, "LLM_MODEL", "openai/gpt-oss-120b"),
         temperature=0.0
     )
 
