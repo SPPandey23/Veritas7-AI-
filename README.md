@@ -6,10 +6,11 @@
 
 ## 📖 Overview
 
-The **AI Research Agent** is a cutting-edge multi-agent system designed to tackle complex research questions without human intervention. By leveraging the power of **LangGraph**, **Groq (Llama 3)**, and **Streamlit**, this project transforms a simple user prompt into a rigorous, multi-step investigation. 
+The **Veritas7 AI** is a cutting-edge multi-agent system designed to tackle complex research questions without human intervention. By leveraging the power of **LangGraph**, **Groq**, **FastAPI**, and a **Modern React UI**, this project transforms a simple user prompt into a rigorous, multi-step investigation. 
 
 **The Problem:** Traditional LLM prompts often yield shallow, hallucinated, or unverified answers for deep technical or academic queries. 
-**The Solution:** A 7-stage, cyclic graph-based architecture that simulates a team of expert researchers. It breaks down the problem, searches the web, extracts document context, criticizes its own drafts, and iteratively refines the final output until it meets a high-quality threshold.
+**The Solution:** A 7-stage, cyclic graph-based architecture that simulates a team of expert researchers. It breaks down the problem, searches the web, extracts document context, criticizes its own drafts, and iteratively refines the final output until it meets a high-quality threshold—all presented in a beautiful, glassmorphic web interface.
+
 
 ---
 
@@ -101,33 +102,91 @@ Veritas7-AI-/
 Follow these steps to deploy the AI Research Agent locally.
 
 ### 1. Clone the Repository
+
 ```bash
-git clone <your-repo-url
-cd model
+git clone https://github.com/SPPandey23/Veritas7-AI-.git
+cd Veritas7-AI-
 ```
 
 ### 2. Create a Virtual Environment
+
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
 ```
 
-### 3. Install Dependencies
+**Activate the virtual environment:**
+
+**Linux / macOS:**
+
+```bash
+source venv/bin/activate
+```
+
+**Windows:**
+
+```bash
+venv\Scripts\activate
+```
+
+### 3. Install Backend Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 4. Configure API Keys
-Create a `.env` file in the root directory (or use the Streamlit sidebar at runtime):
+
+Create a `.env` file in the root directory:
+
 ```env
 GROQ_API_KEY="your_groq_api_key_here"
 TAVILY_API_KEY="your_tavily_api_key_here"
 ```
-*(Note: You can get a free Groq key at [console.groq.com](https://console.groq.com) and a free Tavily key at [tavily.com](https://tavily.com))*
+
+**Get your API keys:**
+
+- [Groq API Key](https://console.groq.com/)
+- [Tavily API Key](https://tavily.com/)
+
+> **Note:** Keep your API keys private and never commit your `.env` file to GitHub.
 
 ### 5. Run the Application
+
+This project uses a modern decoupled architecture. Run the backend API and frontend UI in two separate terminals.
+
+#### Terminal 1: Start the Backend API
+
+Make sure your virtual environment is activated.
+
 ```bash
-streamlit run app.py
+python server.py
 ```
 
-Open the provided `localhost` URL in your browser, enter your API keys (if not set in `.env`), and formulate a complex question to start the automated research!
+#### Terminal 2: Start the Frontend UI
+
+Navigate to the frontend directory:
+
+```bash
+cd frontend
+```
+
+Install frontend dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+### 6. Open the Application
+
+Once both the backend and frontend servers are running, open your browser and visit:
+
+ **[http://localhost:5173](http://localhost:5173)**
+
+Enter a complex question and watch the automated AI researchers go to work! 🤖
+
