@@ -53,36 +53,45 @@ graph TD
 ## 🛠️ Technology Stack
 
 - **Core Frameworks:** Python, LangGraph, LangChain
-- **LLM Engine:** Groq API (Llama 3 family)
-- **Search & Retrieval:** Tavily API, BeautifulSoup4
-- **Vector Database:** ChromaDB, SentenceTransformers (HuggingFace)
-- **Frontend / UI:** Streamlit
+- **LLM Engine:** Groq API (OpenAI/gpt-OSS-120b)
+- **Search & Retrieval:** Tavily API
+- **Backend API:** FastAPI, Uvicorn
+- **Frontend / UI:** React, Vite, Vanilla CSS 
+
 
 ---
 
 ## 📂 Project Structure
-
-```text
-model/
-├── agents/             # The 'Brains': Specialized node logic
+```
+Veritas7-AI-/
+├── agents/             # Specialized node logic
 │   ├── planner.py
-│   ├── query_rewriter.py
+│   ├── query_writer.py
 │   ├── research_agent.py
 │   ├── summarizer.py
 │   ├── generator.py
 │   ├── critic_agent.py
 │   └── refiner.py
-├── config/             # Settings and Env management
-│   └── settings.py
+├── config/             # Settings and Prompts
+│   ├── settings.py
+│   └── prompts.py
 ├── core/               # Graph orchestration and State management
 │   ├── graph.py
 │   └── state.py
-├── retrieval/          # Scraping, embedding, and vector storage
-│   ├── web_search.py
-│   └── embeddings.py
-├── README.md           # Documentation
-├── requirements.txt    # Python dependencies
-└── app.py              # Streamlit Entry Point
+├── retrieval/          # Scraping and Web Search
+│   └── web_search.py
+├── frontend/           # Modern React + Vite UI
+│   ├── src/
+│   │   ├── components/ # Modular UI components
+│   │   ├── App.jsx     
+│   │   ├── App.css     
+│   │   ├── main.jsx    
+│   │   └── index.css   
+│   ├── package.json    
+│   └── vite.config.js  
+├── README.md         
+├── requirements.txt   
+└── server.py           # FastAPI REST API Entry Poin
 ```
 
 ---
