@@ -6,7 +6,5 @@ langgraph
 tavily-python
 beautifulsoup4
 requests
-sentence-transformers
-langchain-huggingface
 fastapi
 uvicorn[standard]
