@@ -1,4 +1,3 @@
-streamlit
 python-dotenv
 langchain-groq
 pydantic
@@ -7,7 +6,7 @@ langgraph
 tavily-python
 beautifulsoup4
 requests
-chromadb
 sentence-transformers
-langchain-chroma
 langchain-huggingface
+fastapi
+uvicorn[standard]
