@@ -1,13 +1,13 @@
 import logging
 from config.prompts import SUMMARIZER_REDUCE_SYSTEM, SUMMARIZER_REDUCE_USER
-from core.llm import get_planner_llm, call_llm
+from core.llm import get_llm, call_llm
 from core.state import PipelineState
 
 logger = logging.getLogger(__name__)
 
 class SummarizerAgent:
     def __init__(self):
-        self.llm = get_planner_llm()
+        self.llm = get_llm()
         self.max_input_words = 6000 
 
     def run(self, state: PipelineState) -> PipelineState:

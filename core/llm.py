@@ -11,10 +11,7 @@ if getattr(settings, "GROQ_API_KEY", None):
     )
 
 
-def get_planner_llm():
-    return client
-
-def get_rewriter_llm():
+def get_llm():
     return client
 
 

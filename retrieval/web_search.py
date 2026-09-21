@@ -50,10 +50,3 @@ class WebSearchTool:
             logger.error(f"Tavily search failed for '{query}': {e}")
             # Return an empty list so the pipeline can attempt to continue
             return []
-
-    def rewrite_and_search(self, query: str):
-        """
-        Optional: Some users prefer a combined 'search and summarize' 
-        but for your 7-stage pipeline, we keep it simple.
-        """
-        return self.search(query)

@@ -15,7 +15,6 @@ class Settings(BaseSettings):
     TAVILY_API_KEY: str = Field(default="")
 
     # --- Search Settings ---
-    SEARCH_PROVIDER: str = "tavily"
     TOP_K_RESULTS: int = 5
 
     # --- LLM Settings ---
@@ -24,12 +23,6 @@ class Settings(BaseSettings):
 
     # --- Path Helpers ---
     BASE_DIR: Path = Path(__file__).resolve().parent.parent
-    CHROMA_DB_PATH: str = "./data/chroma_db"
-
-    @property
-    def active_search_key(self) -> str:
-        """Returns the Tavily key for the WebSearchTool."""
-        return self.TAVILY_API_KEY
 
     @property
     def has_groq(self) -> bool:

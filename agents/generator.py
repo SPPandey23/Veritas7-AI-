@@ -1,13 +1,13 @@
 import logging
 from config.prompts import GENERATOR_SYSTEM, GENERATOR_USER
-from core.llm import get_planner_llm, call_llm
+from core.llm import get_llm, call_llm
 from core.state import PipelineState
 
 logger = logging.getLogger(__name__)
 
 class GeneratorAgent:
     def __init__(self):
-        self.llm = get_planner_llm()
+        self.llm = get_llm()
 
     def run(self, state: PipelineState) -> PipelineState:
         logger.info("--- NODE: GENERATOR ---")

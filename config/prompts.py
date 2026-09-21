@@ -36,31 +36,7 @@ Original: "{sub_question}"
 
 Optimized query:"""
 
-HYDE_SYSTEM = """You are a research expert. Write a short, dense paragraph that
-directly answers the given question, as if you were writing a textbook excerpt.
-Do not hedge or say 'it depends'. Write the most likely correct answer confidently.
-Use domain-specific terminology. Output only the paragraph — no preamble."""
 
-HYDE_USER = """Write a 2-3 sentence expert answer to this question:
-
-"{sub_question}"
-
-Expert answer paragraph:"""
-
-SUMMARIZER_MAP_SYSTEM = """You are a research assistant. Summarize the following
-document chunk into 2-3 bullet points. Focus only on information relevant to
-the research question. Discard fluff, ads, navigation text, and repetition.
-
-Include the source URL at the end if available."""
-
-SUMMARIZER_MAP_USER = """Research question: {question}
-
-Document chunk:
-\"\"\"
-{document}
-\"\"\"
-
-Key points (bullet list):"""
 
 SUMMARIZER_REDUCE_SYSTEM = """You are a research editor. You've been given
 multiple summaries from different sources. Combine them into a single, clean,

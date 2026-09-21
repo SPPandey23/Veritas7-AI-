@@ -1,14 +1,14 @@
 import logging
 import re
 from config.prompts import PLANNER_SYSTEM, PLANNER_USER
-from core.llm import get_planner_llm, call_llm
+from core.llm import get_llm, call_llm
 from core.state import PipelineState
 
 logger = logging.getLogger(__name__)
 
 class PlannerAgent:
     def __init__(self):
-        self.llm = get_planner_llm()
+        self.llm = get_llm()
 
     def run(self, state: PipelineState) -> PipelineState:
         user_query = state.get("user_query", "")

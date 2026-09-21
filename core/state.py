@@ -1,5 +1,5 @@
 import operator
-from typing import List, Optional, TypedDict, Annotated
+from typing import List, Optional, TypedDict, Annotated, Any
 from pydantic import BaseModel, Field
 
 
@@ -27,9 +27,8 @@ class PipelineState(TypedDict):
     user_query: str
     sub_questions: List[str]
     rewritten_queries: List[str]
-    hyde_passages: List[str]
 
-    raw_documents: Annotated[List[SourceDocument], operator.add]
+    raw_documents: List[SourceDocument]
 
     context_summary: str
     draft_answer: str

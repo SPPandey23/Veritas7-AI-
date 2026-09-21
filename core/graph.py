@@ -21,7 +21,8 @@ critic = CriticAgent()
 refiner = RefinerAgent()
 
 def should_refine(state: PipelineState) -> str:
-    max_iterations = 3
+    from config.settings import settings
+    max_iterations = settings.MAX_ITERATIONS
     current_iterations = state.get("iteration_count", 0)
     
     if current_iterations >= max_iterations:
