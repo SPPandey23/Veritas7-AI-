@@ -18,7 +18,7 @@ function App() {
     setResult(null)
 
     try {
-      const response = await fetch('/api/research', {
+      const response = await fetch('https://veritas7-ai.onrender.com/api/research', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: query.trim() })
