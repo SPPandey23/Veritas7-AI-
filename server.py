@@ -90,7 +90,7 @@ def serialize_state(state: dict) -> dict:
             }
     
     return {
-        "final_answer": state.get("final_answer", "No final answer generated."),
+        "final_answer": state.get("final_answer") or state.get("draft_answer", "No final answer generated."),
         "confidence_score": state.get("confidence_score", 0.0),
         "iteration_count": state.get("iteration_count", 0),
         "sub_questions": state.get("sub_questions", []),
